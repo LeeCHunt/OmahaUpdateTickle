@@ -166,15 +166,12 @@ int main() {
     if (!GetCurrentState(app.Get(), &state_value, &hr)) {
       return -13;
     }
-       
-    //_variant_t status;
-    //hr = app->get_currentState(&status);
-    //hr = VARIANT_BOOL im_a_busy_bundle;
-    //HRESULT hr = app_bundle->raw_isBusy(&im_a_busy_bundle);
     if (state_value >= STATE_INSTALL_COMPLETE) {
       break;
     }
 
     ::Sleep(1000);
   }
+
+  return 0;
 }
